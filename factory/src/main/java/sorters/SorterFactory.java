@@ -4,7 +4,7 @@ public class SorterFactory {
 
 
     public ISorter getSorter(SortType type) {
-        switch(type) {
+        switch (type) {
             case BUBBLE:
                 return new BubbleSorter();
             case QUICK:

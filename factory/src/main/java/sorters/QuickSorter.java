@@ -6,12 +6,6 @@ public class QuickSorter implements ISorter {
 
     // Algorithm source http://www.javenue.info/post/45
 
-    public int[] sort(int... numbers) {
-        int[] result = Arrays.copyOf(numbers, numbers.length);
-        recSort(result, 0, result.length-1);
-        return result;
-    }
-
     private static void recSort(int[] array, int start, int end) {
         if (start >= end)
             return;
@@ -35,7 +29,13 @@ public class QuickSorter implements ISorter {
             }
         }
         recSort(array, start, cur);
-        recSort(array, cur+1, end);
+        recSort(array, cur + 1, end);
+    }
+
+    public int[] sort(int... numbers) {
+        int[] result = Arrays.copyOf(numbers, numbers.length);
+        recSort(result, 0, result.length - 1);
+        return result;
     }
 
 }
