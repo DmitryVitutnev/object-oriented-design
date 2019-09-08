@@ -20,6 +20,20 @@ public class Noble implements ISoldier, Prototype<Noble> {
         troops = new ArrayList<>();
     }
 
+    public static Noble getKing() {
+        if (king == null) {
+            int mP = 1 + (int) (Math.random() * 5);
+            int rP = 1 + (int) (Math.random() * 5);
+            int def = 1 + (int) (Math.random() * 5);
+            king = new Noble(mP, rP, def);
+        }
+        return king;
+    }
+
+    public static void changeKing() {
+        king = null;
+    }
+
     public void addTroop(ISoldier t) {
         troops.add(t);
     }
@@ -27,7 +41,7 @@ public class Noble implements ISoldier, Prototype<Noble> {
     @Override
     public int getMeleePower() {
         int result = meleePower;
-        for(ISoldier s : troops) {
+        for (ISoldier s : troops) {
             result += s.getMeleePower();
         }
         return result;
@@ -36,7 +50,7 @@ public class Noble implements ISoldier, Prototype<Noble> {
     @Override
     public int getRangedPower() {
         int result = rangedPower;
-        for(ISoldier s : troops) {
+        for (ISoldier s : troops) {
             result += s.getRangedPower();
         }
         return result;
@@ -45,7 +59,7 @@ public class Noble implements ISoldier, Prototype<Noble> {
     @Override
     public int getDefence() {
         int result = defence;
-        for(ISoldier s : troops) {
+        for (ISoldier s : troops) {
             result += s.getDefence();
         }
         return result;
@@ -58,20 +72,6 @@ public class Noble implements ISoldier, Prototype<Noble> {
         int def = 1 + (int) (Math.random() * (getKing().defence - 1));
 
         return new Noble(mP, rP, def);
-    }
-
-    public static Noble getKing() {
-        if(king == null) {
-            int mP = 1 + (int) (Math.random() * 5);
-            int rP = 1 + (int) (Math.random() * 5);
-            int def = 1 + (int) (Math.random() * 5);
-            king = new Noble(mP, rP, def);
-        }
-        return king;
-    }
-
-    public static void changeKing() {
-        king = null;
     }
 
 }

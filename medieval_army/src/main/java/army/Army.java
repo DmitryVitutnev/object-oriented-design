@@ -1,10 +1,6 @@
 package army;
 
-import soldiers.ISoldier;
 import soldiers.Noble;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Army {
 
@@ -13,11 +9,6 @@ public class Army {
     public Army(Noble commander) {
         this.commander = commander;
     }
-
-
-
-
-
 
 
 }
