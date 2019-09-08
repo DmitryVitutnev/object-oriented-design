@@ -3,7 +3,9 @@ package soldiers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Noble implements ISoldier {
+public class Noble implements ISoldier, Prototype<Noble> {
+
+    private static Noble king;
 
     private int meleePower;
     private int rangedPower;
@@ -11,7 +13,7 @@ public class Noble implements ISoldier {
 
     private List<ISoldier> troops;
 
-    public Noble(int meleePower, int rangedPower, int defence) {
+    private Noble(int meleePower, int rangedPower, int defence) {
         this.meleePower = meleePower;
         this.rangedPower = rangedPower;
         this.defence = defence;
@@ -48,4 +50,28 @@ public class Noble implements ISoldier {
         }
         return result;
     }
+
+    @Override
+    public Noble clone() {
+        int mP = 1 + (int) (Math.random() * (getKing().meleePower - 1));
+        int rP = 1 + (int) (Math.random() * (getKing().rangedPower - 1));
+        int def = 1 + (int) (Math.random() * (getKing().defence - 1));
+
+        return new Noble(mP, rP, def);
+    }
+
+    public static Noble getKing() {
+        if(king == null) {
+            int mP = 1 + (int) (Math.random() * 5);
+            int rP = 1 + (int) (Math.random() * 5);
+            int def = 1 + (int) (Math.random() * 5);
+            king = new Noble(mP, rP, def);
+        }
+        return king;
+    }
+
+    public static void changeKing() {
+        king = null;
+    }
+
 }
