@@ -1,6 +1,6 @@
-package factories;
+package army.factories;
 
-import soldiers.Commoner;
+import army.soldiers.Commoner;
 
 public interface ICommonerFactory {
 

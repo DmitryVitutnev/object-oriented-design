@@ -1,10 +1,10 @@
 package army;
 
-import factories.HeavyCommonerFactory;
-import factories.ICommonerFactory;
-import factories.LightCommonerFactory;
-import soldiers.Commoner;
-import soldiers.Noble;
+import army.factories.HeavyCommonerFactory;
+import army.factories.ICommonerFactory;
+import army.factories.LightCommonerFactory;
+import army.soldiers.Commoner;
+import army.soldiers.Noble;
 
 public class ArmyDirector {
 
@@ -17,27 +17,57 @@ public class ArmyDirector {
         hcFactory = new HeavyCommonerFactory();
     }
 
-    public void makeArmy(ArmyBuilder builder, int nobleNumber, int commonerNumber) {
+    public void makeFieldAssaultArmy(ArmyBuilder builder, int power) {
+        if(power < 0) {
+            power = 0;
+        }
+        makeArmy(builder, 1 * power, 7 * power, 3 * power, 2 * power, 1 * power);
+    }
+
+    public void makeFieldDefenceArmy(ArmyBuilder builder, int power) {
+        if(power < 0) {
+            power = 0;
+        }
+        makeArmy(builder, 1 * power, 4 * power, 4 * power, 2 * power, 2 * power);
+    }
+
+    public void makeSiegeAssaultArmy(ArmyBuilder builder, int power) {
+        if(power < 0) {
+            power = 0;
+        }
+        makeArmy(builder, 1 * power, 5 * power, 1 * power, 5 * power, 1 * power);
+    }
+
+    public void makeSiegeDefenceArmy(ArmyBuilder builder, int power) {
+        if(power < 0) {
+            power = 0;
+        }
+        makeArmy(builder, 1 * power, 0 * power, 4 * power, 4 * power, 4 * power);
+    }
+
+    public void makeArmy(ArmyBuilder builder, int officerNumber, int lightInfantryNumber, int archerNumber, int heavyInfantryNumber, int crossbowmanNumber) {
         builder.reset();
-        for (int i = 0; i < nobleNumber; i++) {
+        for (int i = 0; i < officerNumber; i++) {
             builder.addNoble(Noble.getKing().clone());
         }
         ICommonerFactory factory;
-        Commoner c;
-        for (int i = 0; i < commonerNumber; i++) {
-            if (3 * Math.random() < 1) {
-                factory = hcFactory;
-            } else {
-                factory = lcFactory;
-            }
-            if (2 * Math.random() < 1) {
-                c = factory.createMelee();
-            } else {
-                c = factory.createRanged();
-            }
-            builder.addCommoner(c);
+        factory = lcFactory;
+        for (int i = 0; i < lightInfantryNumber; i++) {
+            builder.addCommoner(factory.createMelee());
+        }
+        for (int i = 0; i < archerNumber; i++) {
+            builder.addCommoner(factory.createRanged());
+        }
+        factory = hcFactory;
+        for (int i = 0; i < heavyInfantryNumber; i++) {
+            builder.addCommoner(factory.createMelee());
+        }
+        for (int i = 0; i < crossbowmanNumber; i++) {
+            builder.addCommoner(factory.createRanged());
         }
     }
+
+
 
 
 }

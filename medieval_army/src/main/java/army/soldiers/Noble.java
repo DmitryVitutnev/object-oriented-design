@@ -1,4 +1,4 @@
-package soldiers;
+package army.soldiers;
 
 import java.util.ArrayList;
 import java.util.List;

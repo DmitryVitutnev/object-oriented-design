@@ -1,6 +1,6 @@
 package army;
 
-import soldiers.Noble;
+import army.soldiers.Noble;
 
 public class Army {
 
@@ -10,5 +10,16 @@ public class Army {
         this.commander = commander;
     }
 
+    public int getMeleePower() {
+        return commander.getMeleePower();
+    }
+
+    public int getRangedPower() {
+        return commander.getRangedPower();
+    }
+
+    public int getDefence() {
+        return commander.getDefence();
+    }
 
 }

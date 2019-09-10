@@ -1,22 +1,22 @@
-package factories;
+package army.factories;
 
-import soldiers.Commoner;
+import army.soldiers.Commoner;
 
-public class LightCommonerFactory implements ICommonerFactory {
+public class HeavyCommonerFactory implements ICommonerFactory {
     @Override
     public Commoner createMelee() {
-        int meleePower = 3;
+        int meleePower = 5;
         int rangedPower = 0;
-        int defence = 3;
+        int defence = 5;
 
         return new Commoner(meleePower, rangedPower, defence);
     }
 
     @Override
     public Commoner createRanged() {
-        int meleePower = 1;
-        int rangedPower = 3;
-        int defence = 2;
+        int meleePower = 2;
+        int rangedPower = 5;
+        int defence = 3;
 
         return new Commoner(meleePower, rangedPower, defence);
     }

@@ -1,7 +1,7 @@
 package army;
 
-import soldiers.Commoner;
-import soldiers.Noble;
+import army.soldiers.Commoner;
+import army.soldiers.Noble;
 
 import java.util.ArrayList;
 import java.util.List;

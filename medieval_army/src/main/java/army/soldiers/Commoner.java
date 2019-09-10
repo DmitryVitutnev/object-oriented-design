@@ -1,4 +1,4 @@
-package soldiers;
+package army.soldiers;
 
 public class Commoner implements ISoldier {
 
