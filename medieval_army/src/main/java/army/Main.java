@@ -16,7 +16,7 @@ public class Main {
         armyDirector.makeFieldDefenceArmy(armyBuilder, 5);
         kingdomArmy = armyBuilder.getResult();
 
-        
+
 
 
     }
