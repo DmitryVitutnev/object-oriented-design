@@ -3,7 +3,7 @@ package army.soldiers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Noble implements ISoldier, Prototype<Noble> {
+public class Noble implements ISoldier, IPrototype<Noble> {
 
     private static Noble king;
 
@@ -61,6 +61,15 @@ public class Noble implements ISoldier, Prototype<Noble> {
         int result = defence;
         for (ISoldier s : troops) {
             result += s.getDefence();
+        }
+        return result;
+    }
+
+    @Override
+    public int getTroopsNumber() {
+        int result = 1;
+        for (ISoldier s : troops) {
+            result += s.getTroopsNumber();
         }
         return result;
     }

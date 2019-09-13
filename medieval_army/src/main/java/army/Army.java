@@ -22,4 +22,8 @@ public class Army {
         return commander.getDefence();
     }
 
+    public int getTroopsNumber() {
+        return commander.getTroopsNumber();
+    }
+
 }

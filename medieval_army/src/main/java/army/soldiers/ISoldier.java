@@ -8,5 +8,7 @@ public interface ISoldier {
 
     int getDefence();
 
+    int getTroopsNumber();
+
 
 }

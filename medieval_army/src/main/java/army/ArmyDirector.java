@@ -3,7 +3,6 @@ package army;
 import army.factories.HeavyCommonerFactory;
 import army.factories.ICommonerFactory;
 import army.factories.LightCommonerFactory;
-import army.soldiers.Commoner;
 import army.soldiers.Noble;
 
 public class ArmyDirector {
@@ -18,28 +17,28 @@ public class ArmyDirector {
     }
 
     public void makeFieldAssaultArmy(ArmyBuilder builder, int power) {
-        if(power < 0) {
+        if (power < 0) {
             power = 0;
         }
         makeArmy(builder, 1 * power, 7 * power, 3 * power, 2 * power, 1 * power);
     }
 
     public void makeFieldDefenceArmy(ArmyBuilder builder, int power) {
-        if(power < 0) {
+        if (power < 0) {
             power = 0;
         }
         makeArmy(builder, 1 * power, 4 * power, 4 * power, 2 * power, 2 * power);
     }
 
     public void makeSiegeAssaultArmy(ArmyBuilder builder, int power) {
-        if(power < 0) {
+        if (power < 0) {
             power = 0;
         }
         makeArmy(builder, 1 * power, 5 * power, 1 * power, 5 * power, 1 * power);
     }
 
     public void makeSiegeDefenceArmy(ArmyBuilder builder, int power) {
-        if(power < 0) {
+        if (power < 0) {
             power = 0;
         }
         makeArmy(builder, 1 * power, 0 * power, 4 * power, 4 * power, 4 * power);
@@ -66,8 +65,6 @@ public class ArmyDirector {
             builder.addCommoner(factory.createRanged());
         }
     }
-
-
 
 
 }
