@@ -26,4 +26,9 @@ public class Commoner implements ISoldier {
     public int getDefence() {
         return defence;
     }
+
+    @Override
+    public int getTroopsNumber() {
+        return 1;
+    }
 }

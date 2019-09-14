@@ -1,6 +1,6 @@
 package army.soldiers;
 
-public interface Prototype<T> {
+public interface IPrototype<T> {
 
     T clone();
 
