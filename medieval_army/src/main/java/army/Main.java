@@ -10,7 +10,7 @@ public class Main {
 
         Army imperialArmy, kingdomArmy;
 
-        armyDirector.makeFieldAssaultArmy(armyBuilder, 6);
+        armyDirector.makeFieldAssaultArmy(armyBuilder, 10);
         imperialArmy = armyBuilder.getResult();
 
         armyDirector.makeFieldDefenceArmy(armyBuilder, 5);
