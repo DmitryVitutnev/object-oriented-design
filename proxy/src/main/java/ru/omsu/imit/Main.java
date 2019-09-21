@@ -9,6 +9,10 @@ public class Main {
 
         System.out.println(matrix.getDet());
         System.out.println(matrix.getDet());
+
+        matrix.setElem(0, 2, 2);
+
+        System.out.println(matrix.getDet());
         System.out.println(matrix.getDet());
 
     }

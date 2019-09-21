@@ -11,7 +11,9 @@ public class Main {
         CheckBox rememberCheckBox = dialog.getRememberCheckBox();
 
         loginButton.click();
-
+        exitButton.click();
+        rememberCheckBox.check();
+        rememberCheckBox.uncheck();
     }
 
 
