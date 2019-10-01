@@ -10,15 +10,19 @@ public class AudioController {
     private Button lockButton;
     private Button nextButton;
     private Button previousButton;
+    private Button saveButton;
+    private Button loadButton;
 
 
     public AudioController() {
         player = new AudioPlayer();
 
-        playButton = new Button(()->{executeCommand(new PlayCommand()); return null;});
-        lockButton = new Button(()->{executeCommand(new LockCommand()); return null;});
-        nextButton = new Button(()->{executeCommand(new NextCommand()); return null;});
-        previousButton = new Button(()->{executeCommand(new PreviousCommand()); return null;});
+        playButton = new Button(()->{executeCommand(new PlayCommand());});
+        lockButton = new Button(()->{executeCommand(new LockCommand());});
+        nextButton = new Button(()->{executeCommand(new NextCommand());});
+        previousButton = new Button(()->{executeCommand(new PreviousCommand());});
+        saveButton = new Button(()->{executeCommand(new SaveCommand());});
+        loadButton = new Button(()->{executeCommand(new LoadCommand());});
 
     }
 
@@ -36,6 +40,14 @@ public class AudioController {
 
     public Button getPreviousButton() {
         return previousButton;
+    }
+
+    public Button getSaveButton() {
+        return saveButton;
+    }
+
+    public Button getLoadButton() {
+        return loadButton;
     }
 
     private void executeCommand(ICommand command) {

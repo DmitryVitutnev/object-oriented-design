@@ -7,9 +7,11 @@ public class AudioPlayer {
 
     private State state;
     private boolean playing;
+    private Memento backup;
 
     public AudioPlayer() {
         state = new ReadyState(this);
+        backup = new Memento(state, playing);
     }
 
     public void changeState(State state) {
@@ -63,6 +65,28 @@ public class AudioPlayer {
 
     public void rewind(int time) {
         System.out.println("Rewind " + time);
+    }
+
+    public void saveBackup() {
+        backup = new Memento(state, playing);
+        System.out.println("Data saved");
+    }
+
+    public void loadBackup() {
+        state = backup.state;
+        playing = backup.playing;
+        System.out.println("Data loaded");
+    }
+
+
+    private class Memento {
+        private State state;
+        private boolean playing;
+
+        public Memento(State state, boolean playing) {
+            this.state = state;
+            this.playing = playing;
+        }
     }
 
 

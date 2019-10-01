@@ -1,18 +1,20 @@
 package ru.omsu.imit;
 
+import ru.omsu.imit.command.IProcedure;
+
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
 public class Button {
 
-    private Supplier<Void> onClickAction;
+    private IProcedure onClickAction;
 
-    public Button(Supplier<Void> onClickAction) {
+    public Button(IProcedure onClickAction) {
         this.onClickAction = onClickAction;
     }
 
     public void click() {
-        onClickAction.get();
+        onClickAction.execute();
     }
 
 
