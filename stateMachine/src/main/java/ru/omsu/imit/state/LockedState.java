@@ -1,4 +1,6 @@
-package ru.omsu.imit;
+package ru.omsu.imit.state;
+
+import ru.omsu.imit.AudioPlayer;
 
 public class LockedState extends State{
 

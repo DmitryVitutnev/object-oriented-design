@@ -4,9 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AudioPlayer player = new AudioPlayer();
+        AudioController controller = new AudioController();
 
-        player.clickLock();
+
+        controller.getPlayButton().click();
+        controller.getLockButton().click();
 
 
     }

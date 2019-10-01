@@ -2,8 +2,11 @@ package ru.omsu.imit.command;
 
 import ru.omsu.imit.AudioPlayer;
 
-public interface ICommand {
+import java.util.function.Consumer;
 
-    void execute(AudioPlayer player);
+
+public interface ICommand extends Consumer<AudioPlayer> {
+
+    void accept(AudioPlayer player);
 
 }

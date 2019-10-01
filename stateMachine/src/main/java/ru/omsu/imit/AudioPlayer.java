@@ -1,5 +1,8 @@
 package ru.omsu.imit;
 
+import ru.omsu.imit.state.ReadyState;
+import ru.omsu.imit.state.State;
+
 public class AudioPlayer {
 
     private State state;
@@ -11,6 +14,7 @@ public class AudioPlayer {
 
     public void changeState(State state) {
         this.state = state;
+        System.out.println("State changed to " + state);
     }
 
     public void clickLock() {

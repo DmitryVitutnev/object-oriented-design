@@ -1,15 +1,10 @@
-package ru.omsu.imit;
+package ru.omsu.imit.state;
 
-import ru.omsu.imit.command.ICommand;
+import ru.omsu.imit.AudioPlayer;
 
 public abstract class State {
 
     protected AudioPlayer player;
-
-    /*protected ICommand lockCommand;
-    protected ICommand playCommand;
-    protected ICommand nextCommand;
-    protected ICommand previousCommand;*/
 
 
     public State(AudioPlayer player) {
@@ -24,5 +19,8 @@ public abstract class State {
 
     public abstract void clickPrevious();
 
-
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
