@@ -2,6 +2,7 @@ package shapes;
 
 import colors.IColor;
 import sizes.ISize;
+import visitors.IVisitor;
 
 public class Circle extends Shape {
 
@@ -9,7 +10,8 @@ public class Circle extends Shape {
         super(size, color);
     }
 
-    public String getDescription() {
-        return size.getSize() + " " + color.getColor() + " " + "Circle";
+    public <T> T accept(IVisitor<T> visitor) {
+        return visitor.visitCircle(this);
     }
+
 }
