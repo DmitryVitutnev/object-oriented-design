@@ -55,4 +55,8 @@ public class ChessClusterer implements IClusterer {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Chess";
+    }
 }

@@ -37,5 +37,8 @@ public class BBCClusterer implements IClusterer {
         return factory.generateFromCliques(graph.getN(), set1, set2);
     }
 
-
+    @Override
+    public String toString() {
+        return "BBC";
+    }
 }
