@@ -5,13 +5,13 @@ public class Main {
     public static void main(String[] args) {
 
         GraphFactory factory = new GraphFactory();
-        IClusterer clusterer1 = new BruteClusterer();
-        IClusterer clusterer2 = new BBCClusterer();
+        IClusterer clusterer1 = new BBCClusterer();
+        IClusterer clusterer2 = new GreedClusterer();
 
         int wins1 = 0;
         int wins2 = 0;
-        for(int i = 1; i <= 300; i++) {
-            Graph graph = factory.generateRandom(14, i, 42);
+        for(int i = 0; i < 10; i++) {
+            Graph graph = factory.generateRandom(400, 0.3, 31 * i);
             Graph bbcClusteredGraph = clusterer1.handle(graph);
             Graph bbcDifferenceGraph = GraphFunctions.symmetricDifference(graph, bbcClusteredGraph);
             Graph chessClusteredGraph = clusterer2.handle(graph);
@@ -22,7 +22,8 @@ public class Main {
             if(bbcDifferenceGraph.countEdges() > chessDifferenceGraph.countEdges()) {
                 wins2++;
             }
-            System.out.println("Edges_number=" + graph.countEdges() + " " + clusterer1 + "_diff=" + bbcDifferenceGraph.countEdges() + " " + clusterer2 + "_diff=" + chessDifferenceGraph.countEdges());
+            System.out.println("Edges_number=" + graph.countEdges() + " " + clusterer1 + "_diff=" + bbcDifferenceGraph.countEdges() + " " + clusterer2 + "_diff=" + chessDifferenceGraph.countEdges()
+                    + " Efficiency=" + bbcDifferenceGraph.countEdges() * 1.0 / chessDifferenceGraph.countEdges());
         }
 
         System.out.println("" + clusterer1 + " wins = " + wins1);

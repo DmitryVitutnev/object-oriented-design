@@ -10,7 +10,7 @@ public class BBCClusterer implements IClusterer {
     public Graph handle(Graph graph) {
         List<Graph> list = new LinkedList<Graph>();
         for(Integer v : graph.getVertexSet()) {
-            list.add(greedClustering(graph, v));
+            list.add(subClustering(graph, v));
         }
         int min = graph.getN() * graph.getN();
         Graph result = null;
@@ -24,7 +24,7 @@ public class BBCClusterer implements IClusterer {
         return result;
     }
 
-    private Graph greedClustering(Graph graph, int mainVertex) {
+    private Graph subClustering(Graph graph, int mainVertex) {
         Set<Integer> vertexSet, set1, set2;
         vertexSet = graph.getVertexSet();
         set1 = new HashSet<Integer>();
