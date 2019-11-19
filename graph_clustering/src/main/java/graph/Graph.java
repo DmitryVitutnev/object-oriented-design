@@ -1,6 +1,5 @@
 package graph;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +10,7 @@ public class Graph {
 
     public Graph(int n) {
         this.n = n;
-        if(n == 0) {
+        if (n == 0) {
             return;
         }
         edges = new boolean[n][n];
@@ -23,7 +22,7 @@ public class Graph {
 
     public Set<Integer> getVertexSet() {
         Set<Integer> result = new HashSet<Integer>();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             result.add(i);
         }
         return result;
@@ -34,7 +33,7 @@ public class Graph {
     }
 
     public void setEdge(int v1, int v2, boolean value) {
-        if(v1 == v2) {
+        if (v1 == v2) {
             return;
         }
         edges[v1][v2] = value;
@@ -43,9 +42,9 @@ public class Graph {
 
     public int countEdges() {
         int result = 0;
-        for(int i = 0; i < n; i++) {
-            for(int j = i + 1; j < n; j++) {
-                if(edges[i][j]) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (edges[i][j]) {
                     result++;
                 }
             }
@@ -59,8 +58,8 @@ public class Graph {
 
     public Set<Integer> getVertexNeighbours(int v) {
         Set<Integer> result = new HashSet<Integer>();
-        for(int i = 0; i < n; i++) {
-            if(edges[i][v]) {
+        for (int i = 0; i < n; i++) {
+            if (edges[i][v]) {
                 result.add(i);
             }
         }
@@ -70,9 +69,9 @@ public class Graph {
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                if(edges[i][j]) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (edges[i][j]) {
                     string.append(1);
                 } else {
                     string.append(0);

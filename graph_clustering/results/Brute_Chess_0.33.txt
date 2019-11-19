@@ -1,0 +1,25 @@
+Vertex_number=1 Edge_number=0 Brute_result=0 Chess_result=0 Winner=Both
+Vertex_number=2 Edge_number=0 Brute_result=0 Chess_result=0 Winner=Both
+Vertex_number=3 Edge_number=1 Brute_result=0 Chess_result=2 Winner=Brute
+Vertex_number=4 Edge_number=2 Brute_result=0 Chess_result=4 Winner=Brute
+Vertex_number=5 Edge_number=3 Brute_result=3 Chess_result=7 Winner=Brute
+Vertex_number=6 Edge_number=4 Brute_result=4 Chess_result=4 Winner=Both
+Vertex_number=7 Edge_number=6 Brute_result=5 Chess_result=13 Winner=Brute
+Vertex_number=8 Edge_number=7 Brute_result=7 Chess_result=13 Winner=Brute
+Vertex_number=9 Edge_number=8 Brute_result=12 Chess_result=18 Winner=Brute
+Vertex_number=10 Edge_number=9 Brute_result=13 Chess_result=23 Winner=Brute
+Vertex_number=11 Edge_number=13 Brute_result=18 Chess_result=22 Winner=Brute
+Vertex_number=12 Edge_number=14 Brute_result=22 Chess_result=28 Winner=Brute
+Vertex_number=13 Edge_number=18 Brute_result=26 Chess_result=38 Winner=Brute
+Vertex_number=14 Edge_number=21 Brute_result=32 Chess_result=47 Winner=Brute
+Vertex_number=15 Edge_number=28 Brute_result=35 Chess_result=55 Winner=Brute
+Vertex_number=16 Edge_number=30 Brute_result=39 Chess_result=52 Winner=Brute
+Vertex_number=17 Edge_number=31 Brute_result=49 Chess_result=67 Winner=Brute
+Vertex_number=18 Edge_number=35 Brute_result=53 Chess_result=77 Winner=Brute
+Vertex_number=19 Edge_number=41 Brute_result=62 Chess_result=80 Winner=Brute
+Vertex_number=20 Edge_number=44 Brute_result=71 Chess_result=90 Winner=Brute
+Vertex_number=21 Edge_number=49 Brute_result=79 Chess_result=95 Winner=Brute
+Vertex_number=22 Edge_number=54 Brute_result=86 Chess_result=108 Winner=Brute
+Vertex_number=23 Edge_number=61 Brute_result=94 Chess_result=128 Winner=Brute
+Brute wins = 20
+Chess wins = 0

@@ -10,10 +10,10 @@ public class GraphFactory {
         Random random = new Random(seed);
         Graph result = new Graph(n);
         double randomValue;
-        for(int i = 0; i < n; i++) {
-            for(int j = i + 1; j < n; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
                 randomValue = random.nextDouble();
-                if(randomValue < edgeKoef) {
+                if (randomValue < edgeKoef) {
                     result.setEdge(i, j, true);
                 }
             }
@@ -23,9 +23,9 @@ public class GraphFactory {
 
     public Graph generateFromCliques(int n, Set<Integer>... cliques) {
         Graph result = new Graph(n);
-        for(Set<Integer> s : cliques) {
-            for(Integer v1 : s) {
-                for(Integer v2 : s) {
+        for (Set<Integer> s : cliques) {
+            for (Integer v1 : s) {
+                for (Integer v2 : s) {
                     result.setEdge(v1, v2, true);
                 }
             }

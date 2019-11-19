@@ -1,4 +1,6 @@
-package graph;
+package clusterers;
+
+import graph.Graph;
 
 public interface IClusterer {
 

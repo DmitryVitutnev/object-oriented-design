@@ -1,4 +1,7 @@
-package graph;
+package clusterers;
+
+import graph.Graph;
+import graph.GraphFactory;
 
 import java.util.*;
 
@@ -8,7 +11,7 @@ public class ChessClusterer implements IClusterer {
     public Graph handle(Graph graph) {
         //Create list with vertices and their degrees
         List<Vertex> vertices = new ArrayList<Vertex>();
-        for(Integer v : graph.getVertexSet()) {
+        for (Integer v : graph.getVertexSet()) {
             vertices.add(new Vertex(v, graph.getVertexDegree(v)));
         }
 
@@ -23,8 +26,8 @@ public class ChessClusterer implements IClusterer {
         Set<Integer> set1 = new HashSet<Integer>();
         Set<Integer> set2 = new HashSet<Integer>();
         boolean flag = true;
-        for(Vertex v : vertices) {
-            if(flag) {
+        for (Vertex v : vertices) {
+            if (flag) {
                 set1.add(v.getIndex());
             } else {
                 set2.add(v.getIndex());
@@ -35,6 +38,11 @@ public class ChessClusterer implements IClusterer {
         //Create result graph
         GraphFactory factory = new GraphFactory();
         return factory.generateFromCliques(graph.getN(), set1, set2);
+    }
+
+    @Override
+    public String toString() {
+        return "Chess";
     }
 
     private class Vertex {
@@ -53,10 +61,5 @@ public class ChessClusterer implements IClusterer {
         public int getDegree() {
             return degree;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Chess";
     }
 }

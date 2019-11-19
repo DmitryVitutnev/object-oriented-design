@@ -1,0 +1,25 @@
+Vertex_number=1 Edge_number=0 Brute_result=0 GreedLocal_result=0 Winner=Both
+Vertex_number=2 Edge_number=0 Brute_result=0 GreedLocal_result=0 Winner=Both
+Vertex_number=3 Edge_number=1 Brute_result=0 GreedLocal_result=0 Winner=Both
+Vertex_number=4 Edge_number=2 Brute_result=0 GreedLocal_result=0 Winner=Both
+Vertex_number=5 Edge_number=3 Brute_result=3 GreedLocal_result=3 Winner=Both
+Vertex_number=6 Edge_number=4 Brute_result=4 GreedLocal_result=5 Winner=Brute
+Vertex_number=7 Edge_number=6 Brute_result=5 GreedLocal_result=7 Winner=Brute
+Vertex_number=8 Edge_number=7 Brute_result=7 GreedLocal_result=7 Winner=Both
+Vertex_number=9 Edge_number=8 Brute_result=12 GreedLocal_result=12 Winner=Both
+Vertex_number=10 Edge_number=9 Brute_result=13 GreedLocal_result=13 Winner=Both
+Vertex_number=11 Edge_number=13 Brute_result=18 GreedLocal_result=18 Winner=Both
+Vertex_number=12 Edge_number=14 Brute_result=22 GreedLocal_result=22 Winner=Both
+Vertex_number=13 Edge_number=18 Brute_result=26 GreedLocal_result=26 Winner=Both
+Vertex_number=14 Edge_number=21 Brute_result=32 GreedLocal_result=33 Winner=Brute
+Vertex_number=15 Edge_number=28 Brute_result=35 GreedLocal_result=37 Winner=Brute
+Vertex_number=16 Edge_number=30 Brute_result=39 GreedLocal_result=40 Winner=Brute
+Vertex_number=17 Edge_number=31 Brute_result=49 GreedLocal_result=51 Winner=Brute
+Vertex_number=18 Edge_number=35 Brute_result=53 GreedLocal_result=53 Winner=Both
+Vertex_number=19 Edge_number=41 Brute_result=62 GreedLocal_result=64 Winner=Brute
+Vertex_number=20 Edge_number=44 Brute_result=71 GreedLocal_result=71 Winner=Both
+Vertex_number=21 Edge_number=49 Brute_result=79 GreedLocal_result=79 Winner=Both
+Vertex_number=22 Edge_number=54 Brute_result=86 GreedLocal_result=86 Winner=Both
+Vertex_number=23 Edge_number=61 Brute_result=94 GreedLocal_result=94 Winner=Both
+Brute wins = 7
+GreedLocal wins = 0

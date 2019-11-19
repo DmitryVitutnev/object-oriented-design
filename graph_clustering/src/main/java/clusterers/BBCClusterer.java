@@ -1,4 +1,8 @@
-package graph;
+package clusterers;
+
+import graph.Graph;
+import graph.GraphFactory;
+import graph.GraphFunctions;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -9,14 +13,14 @@ public class BBCClusterer implements IClusterer {
 
     public Graph handle(Graph graph) {
         List<Graph> list = new LinkedList<Graph>();
-        for(Integer v : graph.getVertexSet()) {
+        for (Integer v : graph.getVertexSet()) {
             list.add(subClustering(graph, v));
         }
         int min = graph.getN() * graph.getN();
         Graph result = null;
-        for(Graph g : list) {
+        for (Graph g : list) {
             int difference = GraphFunctions.symmetricDifference(graph, g).countEdges();
-            if(difference < min) {
+            if (difference < min) {
                 min = difference;
                 result = g;
             }
